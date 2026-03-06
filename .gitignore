@@ -1,0 +1,18 @@
+# Build
+bin/
+obj/
+publish/
+
+# Visual Studio / Rider
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Icon source (keep app.ico; optional PNG is local)
+app-icon.png
+
+# OS
+Thumbs.db
+.DS_Store
