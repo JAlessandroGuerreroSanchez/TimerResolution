@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2026-04-08
+
+### Added
+- Biblioteca **TimerResolutionApp.Core**: `TimerMath`, `TimerResolutionNative` (P/Invoke), `AppSettings`, `AppConstants`.
+- Proyecto de pruebas **TimerResolutionApp.Tests** (xUnit) y solución **TimerResolutionApp.sln**.
+- Línea visible de **atajos** bajo el área principal; opción **Confirmar al cerrar si hay alta precisión** (persistente).
+- **Icono de bandeja** con distintivo en alta precisión; menú **Web y soporte (kalur.me)**.
+- Script `publish-single-exe.ps1` copia además `TimerResolutionApp-v{versión}.exe` en `dist\`.
+- Carpeta **winget/** con plantilla de manifiesto y notas para publicar en winget-pkgs.
+
+### Changed
+- `WarnOnExitIfHighRes` en ajustes (por defecto activado); `OpenStudioUrl` usa `AppConstants.SupportWebsiteUrl`.
+
 ## [1.1.0] - 2025-03-06
 
 ### Added

@@ -19,7 +19,7 @@ namespace TimerResolutionApp
             txtHelp.Multiline = true;
             txtHelp.ReadOnly = true;
             txtHelp.ScrollBars = ScrollBars.Vertical;
-            txtHelp.Font = new Font("Segoe UI", 9.75F);
+            txtHelp.Font = new Font("Segoe UI Variable Text", 10F);
             txtHelp.BorderStyle = BorderStyle.None;
             txtHelp.Text =
 @"¿Qué es la resolución del temporizador?
@@ -37,8 +37,20 @@ Al usar POR DEFECTO:
 
 Maximum = 0,5 ms (mínimo posible).
 Default = restaura el valor normal de Windows (~15,6 ms).
-Cerrar siempre restaura antes de salir.";
-            ClientSize = new Size(420, 320);
+Cerrar siempre restaura antes de salir.
+
+Bandeja del sistema:
+• El icono muestra en el tooltip si estás en alta precisión o en modo habitual y la resolución actual aproximada.
+• Clic derecho → «Copiar información de diagnóstico» genera un texto con versión de la app, build de Windows y valores del temporizador (para soporte o incidencias).
+
+La última resolución elegida en el menú desplegable (0,5 ms, 1 ms, etc.) se recuerda al abrir la aplicación de nuevo.
+
+Opciones del pie de ventana:
+• «Confirmar al cerrar si hay alta precisión»: al usar la X de la ventana con el temporizador aún en ~0,5 ms, se pregunta antes de salir (siempre se restaura el valor habitual al cerrar).
+
+Los atajos también se muestran en una línea bajo la lista de botones.";
+            Padding = new Padding(14, 12, 14, 12);
+            ClientSize = new Size(560, 380);
             Controls.Add(txtHelp);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;

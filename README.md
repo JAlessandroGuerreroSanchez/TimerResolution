@@ -42,6 +42,17 @@ Al cerrar la aplicación se restaura siempre la resolución por defecto.
 
 ---
 
+## Desarrollo
+
+- Abre **`TimerResolutionApp.sln`** en Visual Studio o ejecuta:
+  - `dotnet build TimerResolutionApp.sln`
+  - `dotnet test TimerResolutionApp.Tests\TimerResolutionApp.Tests.csproj`
+- La lógica compartida (conversiones, ntdll, ajustes JSON) está en **`TimerResolutionApp.Core`**.
+- Publicación portable: `.\publish-single-exe.ps1` (genera `dist\TimerResolutionApp.exe` y `dist\TimerResolutionApp-v{versión}.exe`).
+- Plantilla **winget**: carpeta `winget\` (sustituir URL y SHA256 del instalador al publicar).
+
+---
+
 ## Requisitos
 
 - Windows (x64).

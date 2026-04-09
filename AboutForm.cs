@@ -4,11 +4,19 @@ namespace TimerResolutionApp
 {
     public partial class AboutForm : Form
     {
+        private bool _dwmChrome;
+
         public AboutForm(bool dark)
         {
             InitializeComponent();
             lblVersion.Text = $"Versión {GetVersion()}";
-            if (dark) ApplyDarkTheme();
+            Load += AboutForm_Load;
+        }
+
+        private void AboutForm_Load(object? sender, EventArgs e)
+        {
+            _dwmChrome = DwmBackdrop.TryEnable(this);
+            ApplyDarkStudioStyle();
         }
 
         private static string GetVersion()
@@ -20,13 +28,13 @@ namespace TimerResolutionApp
             catch { return "1.0.0"; }
         }
 
-        private void ApplyDarkTheme()
+        private void ApplyDarkStudioStyle()
         {
-            BackColor = Color.FromArgb(45, 45, 48);
-            ForeColor = Color.White;
-            lblTitle.ForeColor = Color.White;
-            lblVersion.ForeColor = Color.LightGray;
-            lnkUrl.LinkColor = Color.LightBlue;
+            BackColor = _dwmChrome ? Color.Black : Color.FromArgb(10, 10, 12);
+            ForeColor = Color.FromArgb(244, 244, 245);
+            lblTitle.ForeColor = Color.FromArgb(250, 250, 250);
+            lblVersion.ForeColor = Color.FromArgb(161, 161, 170);
+            lnkUrl.LinkColor = Color.FromArgb(96, 165, 250);
         }
     }
 }

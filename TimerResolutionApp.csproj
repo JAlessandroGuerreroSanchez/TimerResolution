@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <DefaultItemExcludes>$(DefaultItemExcludes);TimerResolutionApp.Core\**\*;TimerResolutionApp.Tests\**\*</DefaultItemExcludes>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
@@ -12,8 +13,12 @@
     <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
     <AssemblyName>TimerResolutionApp</AssemblyName>
     <RootNamespace>TimerResolutionApp</RootNamespace>
-    <Version>1.1.0</Version>
+    <Version>1.5.0</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="TimerResolutionApp.Core\TimerResolutionApp.Core.csproj" />
+  </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="app.ico" />

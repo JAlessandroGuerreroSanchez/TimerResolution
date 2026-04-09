@@ -2,18 +2,26 @@ namespace TimerResolutionApp
 {
     public partial class HelpForm : Form
     {
+        private bool _dwmChrome;
+
         public HelpForm(bool dark)
         {
             InitializeComponent();
-            if (dark) ApplyDarkTheme();
+            Load += HelpForm_Load;
         }
 
-        private void ApplyDarkTheme()
+        private void HelpForm_Load(object? sender, EventArgs e)
         {
-            BackColor = Color.FromArgb(45, 45, 48);
-            ForeColor = Color.White;
-            txtHelp.BackColor = Color.FromArgb(30, 30, 30);
-            txtHelp.ForeColor = Color.White;
+            _dwmChrome = DwmBackdrop.TryEnable(this);
+            ApplyDarkStudioStyle();
+        }
+
+        private void ApplyDarkStudioStyle()
+        {
+            BackColor = _dwmChrome ? Color.Black : Color.FromArgb(10, 10, 12);
+            ForeColor = Color.FromArgb(244, 244, 245);
+            txtHelp.BackColor = Color.FromArgb(20, 20, 24);
+            txtHelp.ForeColor = Color.FromArgb(212, 212, 216);
         }
     }
 }

@@ -20,28 +20,38 @@ namespace TimerResolutionApp
             lnkUrl = new LinkLabel();
             SuspendLayout();
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblTitle.Font = new Font("Segoe UI Variable Text Semibold", 14F, FontStyle.Bold);
             lblTitle.Location = new Point(20, 20);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(180, 21);
+            lblTitle.Size = new Size(208, 25);
             lblTitle.Text = "Timer Resolution";
             lblVersion.AutoSize = true;
-            lblVersion.Location = new Point(20, 50);
+            lblVersion.Font = new Font("Segoe UI Variable Text", 9.5F, FontStyle.Regular);
+            lblVersion.Location = new Point(21, 54);
             lblVersion.Name = "lblVersion";
             lblVersion.Size = new Size(60, 15);
             lblVersion.Text = "Versión 1.0.0";
             lnkUrl.AutoSize = true;
-            lnkUrl.Location = new Point(20, 80);
+            lnkUrl.Font = new Font("Segoe UI Variable Text", 9.5F, FontStyle.Regular);
+            lnkUrl.Location = new Point(21, 85);
             lnkUrl.Name = "lnkUrl";
-            lnkUrl.Size = new Size(200, 15);
+            lnkUrl.Size = new Size(165, 15);
             lnkUrl.TabStop = true;
-            lnkUrl.Text = "Clon de la utilidad Timer Resolution";
+            lnkUrl.Text = "Created by KALUR STUDIO";
             lnkUrl.LinkClicked += (s, ev) =>
             {
                 if (s is LinkLabel lb) lb.LinkVisited = true;
-                try { System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo { FileName = "https://github.com", UseShellExecute = true }); } catch { }
+                try
+                {
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = AppConstants.SupportWebsiteUrl,
+                        UseShellExecute = true
+                    });
+                }
+                catch { }
             };
-            ClientSize = new Size(320, 120);
+            ClientSize = new Size(360, 132);
             Controls.Add(lblTitle);
             Controls.Add(lblVersion);
             Controls.Add(lnkUrl);
