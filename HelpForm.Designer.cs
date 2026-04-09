@@ -48,9 +48,12 @@ La última resolución elegida en el menú desplegable (0,5 ms, 1 ms, etc.) se r
 Opciones del pie de ventana:
 • «Confirmar al cerrar si hay alta precisión»: al usar la X de la ventana con el temporizador aún en ~0,5 ms, se pregunta antes de salir (siempre se restaura el valor habitual al cerrar).
 
-Los atajos también se muestran en una línea bajo la lista de botones.";
+Los atajos también se muestran en una línea bajo la lista de botones.
+
+───
+Licencia: MIT (KALUR STUDIO). Usa funciones no documentadas de ntdll bajo tu responsabilidad. Avisos completos: archivos LICENSE y NOTICE.md en el código fuente del repositorio.";
             Padding = new Padding(14, 12, 14, 12);
-            ClientSize = new Size(560, 380);
+            ClientSize = new Size(560, 420);
             Controls.Add(txtHelp);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;

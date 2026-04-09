@@ -6,7 +6,7 @@
 
 Aplicación de escritorio para Windows que permite consultar y cambiar la resolución del temporizador del sistema (timer resolution), usando las APIs de **ntdll.dll** (`NtQueryTimerResolution` y `NtSetTimerResolution`) para alcanzar hasta **0,5 ms** (en lugar de la resolución por defecto de ~15,6 ms).
 
-Clon de la utilidad [Timer Resolution](https://github.com/tebjan/TimerTool) para Windows, escrita en C# con WinForms (.NET 8).
+Inspirada en utilidades como **[TimerTool](https://github.com/tebjan/TimerTool)** (Tebjan Hirsch); este repositorio es una **implementación independiente** en C# con WinForms (.NET 8), no un fork ni una copia del código de TimerTool.
 
 ---
 
@@ -74,6 +74,8 @@ Ejecuta `TimerResolutionApp.exe`. Usa **Maximum** para reducir la resolución a 
 
 ---
 
-## Licencia
+## Licencia y avisos legales
 
-[MIT](LICENSE) — uso libre. Basado en la utilidad Timer Resolution de la comunidad.
+- Código: licencia **[MIT](LICENSE)**. Copyright **KALUR STUDIO** (2025–2026). Incluye el archivo `LICENSE` al redistribuir.
+- Atribuciones, APIs no documentadas de Windows y dependencias: ver **[NOTICE.md](NOTICE.md)**.
+- *No es asesoramiento jurídico.*

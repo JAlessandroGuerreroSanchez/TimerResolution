@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 La numeración **1.2 → 1.4** agrupa el trabajo que antes figuraba como un único salto a 1.5; cada versión corresponde a un hito real en el historial de Git.
 
+## [1.4.1] - 2026-04-09
+
+### Added
+- **NOTICE.md**: atribución a TimerTool (referencia), aviso sobre APIs no documentadas de `ntdll`, .NET y redistribución.
+- Texto de **ayuda** en la app con resumen de licencia y enlace conceptual a `LICENSE` / `NOTICE.md` en el repo.
+
+### Changed
+- **LICENSE**: titular de copyright **KALUR STUDIO** (2025–2026).
+- **README**: sección legal, redacción corregida (implementación independiente frente a TimerTool).
+
 ## [1.4.0] - 2026-04-09
 
 ### Added
