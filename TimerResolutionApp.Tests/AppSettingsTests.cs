@@ -30,4 +30,30 @@ public class AppSettingsTests
         var s = new AppSettings();
         Assert.True(s.WarnOnExitIfHighRes);
     }
+
+    [Fact]
+    public void Normalize_clamps_custom_ms_and_resets_unknown_mode()
+    {
+        var s = new AppSettings
+        {
+            LastCustomResolutionMs = 999,
+            LastResolutionMode = "NotARealMode"
+        };
+        s.Normalize();
+        Assert.Equal(AppSettings.MaxCustomResolutionMs, s.LastCustomResolutionMs);
+        Assert.Equal("Default", s.LastResolutionMode);
+    }
+
+    [Fact]
+    public void Normalize_fixes_nan_and_too_long_mode()
+    {
+        var s = new AppSettings
+        {
+            LastCustomResolutionMs = double.NaN,
+            LastResolutionMode = new string('X', 64)
+        };
+        s.Normalize();
+        Assert.Equal(AppSettings.MinCustomResolutionMs, s.LastCustomResolutionMs);
+        Assert.Equal("Default", s.LastResolutionMode);
+    }
 }

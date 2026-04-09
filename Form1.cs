@@ -377,9 +377,10 @@ namespace TimerResolutionApp
         private void ApplyPersistedCustomResolution()
         {
             double ms = _settings.LastCustomResolutionMs;
-            bool invalid = ms <= 0 || ms > 30;
+            bool invalid = ms < AppSettings.MinCustomResolutionMs || ms > AppSettings.MaxCustomResolutionMs
+                || double.IsNaN(ms) || double.IsInfinity(ms);
             if (invalid)
-                ms = 0.5;
+                ms = AppSettings.MinCustomResolutionMs;
             _selectedCustomMs = ms;
             _settings.LastCustomResolutionMs = ms;
             btnResolution.Text = FormatMsForButton(ms);
@@ -549,7 +550,16 @@ namespace TimerResolutionApp
         {
             HideCustomResolutionMenu();
             double ms = _selectedCustomMs;
-            uint units = TimerMath.MillisecondsToUnits(ms);
+            if (!TimerMath.TryMillisecondsToUnits(ms, out uint units))
+            {
+                MessageBox.Show(
+                    $"El valor de resolución no es válido ({ms} ms). Elige otra opción del menú.",
+                    "Timer Resolution",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             int status = TimerResolutionNative.NtSetTimerResolution(units, true, out uint actualUnits);
             if (status != TimerResolutionNative.StatusSuccess)
             {
@@ -1196,18 +1206,8 @@ namespace TimerResolutionApp
             grpResolution.ResumeLayout(true);
         }
 
-        private static void OpenStudioUrl()
-        {
-            try
-            {
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = AppConstants.SupportWebsiteUrl,
-                    UseShellExecute = true
-                });
-            }
-            catch { }
-        }
+        private static void OpenStudioUrl() =>
+            BrowserLaunch.OpenIfTrustedHttpOrHttps(AppConstants.SupportWebsiteUrl);
 
         private void lnkBrandTop_LinkClicked(object? sender, LinkLabelLinkClickedEventArgs e) => OpenStudioUrl();
 

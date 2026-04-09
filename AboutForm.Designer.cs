@@ -41,15 +41,7 @@ namespace TimerResolutionApp
             lnkUrl.LinkClicked += (s, ev) =>
             {
                 if (s is LinkLabel lb) lb.LinkVisited = true;
-                try
-                {
-                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
-                    {
-                        FileName = AppConstants.SupportWebsiteUrl,
-                        UseShellExecute = true
-                    });
-                }
-                catch { }
+                BrowserLaunch.OpenIfTrustedHttpOrHttps(AppConstants.SupportWebsiteUrl);
             };
             ClientSize = new Size(360, 132);
             Controls.Add(lblTitle);

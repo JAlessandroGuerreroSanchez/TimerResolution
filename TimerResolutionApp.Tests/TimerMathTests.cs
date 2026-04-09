@@ -28,4 +28,22 @@ public class TimerMathTests
         uint u = TimerMath.MillisecondsToUnits(0.5);
         Assert.Equal(0.5, TimerMath.UnitsToMilliseconds(u), 4);
     }
+
+    [Fact]
+    public void MillisecondsToUnits_rejects_out_of_range()
+    {
+        Assert.Throws<ArgumentOutOfRangeException>(() => TimerMath.MillisecondsToUnits(0.1));
+        Assert.Throws<ArgumentOutOfRangeException>(() => TimerMath.MillisecondsToUnits(100));
+        Assert.Throws<ArgumentOutOfRangeException>(() => TimerMath.MillisecondsToUnits(double.NaN));
+    }
+
+    [Fact]
+    public void TryMillisecondsToUnits_matches_valid_menu_values()
+    {
+        foreach (var ms in new[] { 0.5, 1.0, 2.0, 5.0, 15.625 })
+        {
+            Assert.True(TimerMath.TryMillisecondsToUnits(ms, out uint u));
+            Assert.True(u > 0);
+        }
+    }
 }
