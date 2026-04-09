@@ -2,18 +2,39 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.5.0] - 2026-04-08
+La numeración **1.2 → 1.4** agrupa el trabajo que antes figuraba como un único salto a 1.5; cada versión corresponde a un hito real en el historial de Git.
+
+## [1.4.0] - 2026-04-09
+
+### Added
+- Endurecimiento de **seguridad**: `settings.json` con límites y escritura atómica, validación de URLs al abrir el navegador, comprobación de ms antes de `NtSetTimerResolution`, carga de **ntdll** solo desde System32, **instancia única** (mutex).
+- Pruebas adicionales (`BrowserLaunch`, `Normalize` en ajustes, rangos en `TimerMath`).
+
+### Changed
+- Versión de ensamblado alineada con la línea **1.2–1.4** (sin salto respecto a 1.1).
+
+## [1.3.0] - 2026-04-08
+
+### Added
+- Enlaces del **README** al repositorio real en GitHub; plantilla **winget** con `PackageUrl` y `InstallerUrl` coherentes con Releases.
+
+### Changed
+- **`.gitignore`**: entradas para `.env`, certificados `.pfx` y `secrets.json`.
+- Eliminación del archivo de ayuda local que contenía rutas de máquina (sustituido por el flujo normal de clon/push).
+
+## [1.2.0] - 2026-04-08
 
 ### Added
 - Biblioteca **TimerResolutionApp.Core**: `TimerMath`, `TimerResolutionNative` (P/Invoke), `AppSettings`, `AppConstants`.
 - Proyecto de pruebas **TimerResolutionApp.Tests** (xUnit) y solución **TimerResolutionApp.sln**.
 - Línea visible de **atajos** bajo el área principal; opción **Confirmar al cerrar si hay alta precisión** (persistente).
 - **Icono de bandeja** con distintivo en alta precisión; menú **Web y soporte (kalur.me)**.
-- Script `publish-single-exe.ps1` copia además `TimerResolutionApp-v{versión}.exe` en `dist\`.
+- Script `publish-single-exe.ps1` que copia `TimerResolutionApp-v{versión}.exe` en `dist\`.
 - Carpeta **winget/** con plantilla de manifiesto y notas para publicar en winget-pkgs.
 
 ### Changed
-- `WarnOnExitIfHighRes` en ajustes (por defecto activado); `OpenStudioUrl` usa `AppConstants.SupportWebsiteUrl`.
+- Interfaz oscura (**Mica** / DWM), botones personalizados, menos consumo en primer plano y en bandeja.
+- `WarnOnExitIfHighRes` en ajustes (por defecto activado); enlaces usan `AppConstants.SupportWebsiteUrl`.
 
 ## [1.1.0] - 2025-03-06
 
@@ -27,7 +48,7 @@ All notable changes to this project will be documented in this file.
 - Valores mostrados también en microsegundos (µs)
 - Ayuda (ventana explicativa) y Acerca de (versión)
 - Tema oscuro (checkbox)
-- Aviso cuando otro proceso mantiene alta resolución
+- Aviso cuando otro proceso mantiene alta precisión
 - Aviso de batería al usar Maximum
 - Persistencia de opciones en %AppData%\TimerResolutionApp\settings.json
 

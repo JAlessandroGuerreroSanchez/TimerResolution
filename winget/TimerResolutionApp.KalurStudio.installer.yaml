@@ -1,6 +1,6 @@
 # Plantilla winget — reemplaza InstallerUrl y InstallerSha256 tras cada release.
 PackageIdentifier: KALUR.TimerResolution
-PackageVersion: 1.5.0
+PackageVersion: 1.4.0
 PackageLocale: es-ES
 Publisher: KALUR STUDIO
 PublisherUrl: https://kalur.me/
@@ -16,7 +16,7 @@ Tags:
 Installers:
   - Architecture: x64
     InstallerType: portable
-    InstallerUrl: https://github.com/JAlessandroGuerreroSanchez/TimerResolution/releases/download/v1.5.0/TimerResolutionApp-v1.5.0.exe
+    InstallerUrl: https://github.com/JAlessandroGuerreroSanchez/TimerResolution/releases/download/v1.4.0/TimerResolutionApp-v1.4.0.exe
     InstallerSha256: REEMPLAZAR_SHA256_DEL_EXE
     PortableCommandAlias: TimerResolutionApp
 ManifestType: installer
