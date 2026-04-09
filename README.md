@@ -12,9 +12,7 @@ Clon de la utilidad [Timer Resolution](https://github.com/tebjan/TimerTool) para
 
 ## Descarga
 
-- **[Releases](https://github.com/TU_USUARIO/TimerResolution/releases)** — Descarga el ejecutable para Windows (x64) en la última release. No requiere instalar .NET.
-
-*(Sustituye `TU_USUARIO` por el usuario de GitHub una vez publicado el repo.)*
+- **[Releases](https://github.com/JAlessandroGuerreroSanchez/TimerResolution/releases)** — Ejecutable para Windows (x64) en la última release (cuando subas el `.exe` como adjunto). El build autocontenido no requiere instalar .NET por separado.
 
 ---
 
@@ -56,7 +54,7 @@ Al cerrar la aplicación se restaura siempre la resolución por defecto.
 ## Requisitos
 
 - Windows (x64).
-- .NET 8 Runtime (o usar el .exe autocontenido de [Releases](https://github.com/TU_USUARIO/TimerResolution/releases)).
+- .NET 8 Runtime (o usar el .exe autocontenido de [Releases](https://github.com/JAlessandroGuerreroSanchez/TimerResolution/releases)).
 
 ---
 

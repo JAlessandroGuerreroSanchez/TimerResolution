@@ -17,3 +17,9 @@ app-icon.png
 # OS
 Thumbs.db
 .DS_Store
+
+# Credenciales / entorno local (por si se añaden en el futuro)
+.env
+.env.*
+*.pfx
+secrets.json

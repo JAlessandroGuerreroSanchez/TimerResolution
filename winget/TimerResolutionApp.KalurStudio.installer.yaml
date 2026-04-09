@@ -5,7 +5,7 @@ PackageLocale: es-ES
 Publisher: KALUR STUDIO
 PublisherUrl: https://kalur.me/
 PackageName: Timer Resolution
-PackageUrl: https://kalur.me/
+PackageUrl: https://github.com/JAlessandroGuerreroSanchez/TimerResolution
 License: MIT
 ShortDescription: Consulta y cambia la resolución del temporizador de Windows (hasta 0,5 ms).
 Tags:
@@ -16,7 +16,7 @@ Tags:
 Installers:
   - Architecture: x64
     InstallerType: portable
-    InstallerUrl: https://EJEMPLO.com/releases/TimerResolutionApp-v1.5.0.exe
+    InstallerUrl: https://github.com/JAlessandroGuerreroSanchez/TimerResolution/releases/download/v1.5.0/TimerResolutionApp-v1.5.0.exe
     InstallerSha256: REEMPLAZAR_SHA256_DEL_EXE
     PortableCommandAlias: TimerResolutionApp
 ManifestType: installer
